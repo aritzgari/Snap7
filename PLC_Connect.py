@@ -48,6 +48,7 @@ def lectura():
     return lista
 
 def botonsalida(activar):
+
     ip = "192.168.0.30"
     rack = 0
     slot = 0
@@ -75,6 +76,7 @@ def botonsalida(activar):
     client.disconnect()
 
 def input(velocidad):
+    
     ip = "192.168.0.30"
     rack = 0
     slot = 0

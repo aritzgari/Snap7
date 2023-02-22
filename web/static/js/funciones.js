@@ -7,7 +7,15 @@ async function activarjs() {
 async function desactivarjs() {
     await eel.desactivarpy()();
 }
-
+function input() {
+    var velocidad = document.getElementById("input").value;
+    // Comprueba que sea un número
+    if (isNaN(velocidad)) {
+        alert("Introduce un número.");
+    } else {
+        eel.inputdatos(velocidad);
+    }
+}
 // Cargar los datos que tenga el PLC.
 window.onload = async function datosjs() {
     // Lanzas la función y guardas el valor en value que es una lista
@@ -22,12 +30,9 @@ window.onload = async function datosjs() {
 }
 
 // Introduce datos desde el html a python
-function input() {
-    var velocidad = document.getElementById("input").value;
-    // Comprueba que sea un número
-    if (isNaN(velocidad)) {
-        alert("Introduce un número.");
-    } else{
-        eel.inputdatos(velocidad);
-    }
+
+function form_desde_hasta() {
+    var desde = document.getElementById("desde").value;
+    var hasta = document.getElementById("hasta").value;
+    eel.desde_hasta(desde, hasta)();
 }

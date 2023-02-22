@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sarsim</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/funciones.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Parte de la Sidebar -->
+    <div class="offcanvas offcanvas-start" id="demo">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Sidebar</h1>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <a href="main.html" class="bar-item text-body">Inicio</a>
+            <a href="charts.html" class="bar-item text-body">Charts</a>
+        </div>
+    </div>
+    <!-- Boton que abre la Sidebar -->
+    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">&#9776;</button>
+    <!-- Tabla de visualización de datos -->
+    
+    <form onsubmit="form_desde_hasta()">
+        <label for="desde">Desde:</label>
+        <input type="date" id="desde" name="desde">
+        <label for="hasta">Hasta:</label>
+        <input type="date" id="hasta" name="hasta">
+        <input type="submit" value="Enviar">
+    </form>
+    <div class="container-md my-3">
+        <h1>Gráfico de datos</h1>
+    </div>
+
+    </div>
+
+</body>
+
+</html>
