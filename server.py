@@ -3,19 +3,23 @@ import eel
 from BD_Interac import devolverdatos, selectinfluxplc
 import PLC_Connect
 
+
+print("Haz click en el siguiente enlace cuando aparezca: ")
 eel.init('web')
 diccionario = {}
 lista = []
-print("http://localhost:8080/main.html")
+
 
 # Permite activar una salida del plc usando Snap7
 @eel.expose
 def activarpy():
+
     PLC_Connect.botonsalida(True)
 
 # Permite desactivar una salidad del plc usando Snap7
 @eel.expose
 def desactivarpy():
+
     PLC_Connect.botonsalida(False)
 
 #Este apartado te permite escribir variables reales en PLC
@@ -43,13 +47,13 @@ def devolverdatospy():
 
     dataframe = devolverdatos()
     timestamp = dataframe["Timestamp"].tolist()
-    numeros = dataframe["Entero"].tolist()
-    return timestamp, numeros
+    contador1 = dataframe["Entero"].tolist()
+    contador2 = dataframe["Real"].tolist()
+    return timestamp, contador1, contador2
+
+print("http://localhost:8080/main.html")
 
 eel.start(port=8080)
 
 
 #options eel.start('index.html', mode='chrome',host = 'localhost', port = 27000, block = True, size = (ancho, alto), position = (0, 0), disable_cache = True, close_callback = close_callback, cmdline_args = ['--browser-startup-dialog','--incognito', '--no-experiments'])
-
-
-

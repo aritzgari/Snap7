@@ -38,23 +38,35 @@ function chart() {
 
 };
 window.onload = function createPlot() {
-    eel.devolverdatospy()().then(function ([value1, value2]) {
-        var data = [{
+    eel.devolverdatospy()().then(function ([value1, value2, value3]) {
+        var Contador1 = {
             x: value1,
             y: value2,
-            type: 'scatter'
-        }];
+            name: "Primer Contador"
+        };
+
+        var Contador2 = {
+            x: value1,
+            y: value3,
+            name: "Segundo Contador"
+        };
+
+        var data = [Contador1, Contador2];
 
         var layout = {
-            title: 'My Line Chart',
+            title: 'Datos de aplicación',
             xaxis: {
-                title: 'X-axis label'
+                title: 'Tiempo'
             },
             yaxis: {
-                title: 'Y-axis label'
+                title: 'Valor'
             }
         };
-        Plotly.newPlot('myDiv', data, layout);
+        var config={
+            displaylogo: false,
+            responsive: true
+        };
+        Plotly.newPlot('plotlygraph', data, layout, config);
     });
-    
+
 }

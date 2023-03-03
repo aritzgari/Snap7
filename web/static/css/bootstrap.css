@@ -10890,3 +10890,6 @@ textarea.form-control-lg {
 .bar-item:hover{
   background-color: #babbbc;
 }
+.container-fluid {
+  width: 95%;
+}
