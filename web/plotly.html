@@ -4,11 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/static/img/favicon.ico">
     <title>Sarsim</title>
     <script type="text/javascript" src="/eel.js"></script>
     <link href="/static/css/bootstrap.css" rel="stylesheet">
     <script type="text/javascript" src="/static/js/funciones.js"></script>
     <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/echarts.js"></script>
+    <script src="/static/js/plotly.min.js"></script>
 </head>
 
 <body>
@@ -20,26 +23,30 @@
         </div>
         <div class="offcanvas-body">
             <a href="main.html" class="bar-item text-body">Inicio</a>
-            <a href="charts.html" class="bar-item text-body">Charts</a>
+            <a href="echarts.html" class="bar-item text-body">Charts</a>
+            <a href="plotly.html" class="bar-item text-body">Plotly</a>
         </div>
     </div>
     <!-- Boton que abre la Sidebar -->
     <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">&#9776;</button>
     <!-- Tabla de visualización de datos -->
-    
-    <form onsubmit="form_desde_hasta()">
-        <label for="desde">Desde:</label>
-        <input type="date" id="desde" name="desde">
-        <label for="hasta">Hasta:</label>
-        <input type="date" id="hasta" name="hasta">
-        <input type="submit" value="Enviar">
-    </form>
     <div class="container-md my-3">
         <h1>Gráfico de datos</h1>
+        <div id="myDiv"></div>
+        <form onsubmit="form_desde_hasta()">
+            <div class="form-group">
+                <label for="desde">Desde:</label>
+                <input type="date" class="form-control" id="desde" name="desde">
+            </div>
+            <div class="form-group">
+                <label for="hasta">Hasta:</label>
+                <input type="date" class="form-control" id="hasta" name="hasta">
+            </div>
+            <div class="mt-4">
+                <input type="submit" class="btn btn-dark" value="Enviar">
+            </div>
+        </form>
     </div>
-
-    </div>
-
 </body>
 
 </html>

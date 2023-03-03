@@ -1,15 +1,12 @@
 # Para instalar pip install Eel
-
 import eel
-from BD_Interac import selectinfluxplc
+from BD_Interac import devolverdatos, selectinfluxplc
 import PLC_Connect
-
-
-
 
 eel.init('web')
 diccionario = {}
 lista = []
+print("http://localhost:8080/main.html")
 
 # Permite activar una salida del plc usando Snap7
 @eel.expose
@@ -37,19 +34,20 @@ def datospy():
 
 #Para el desde hasta
 @eel.expose
-def desde_hasta(desde, hasta):
-    #Para hacer pruebas
-    #print(desde,hasta)
+def desde_hastapy(desde, hasta):
 
-    #El plot del dataframe de la simulación.
-    datos=selectinfluxplc(desde,hasta)
-    if datos.empty:
-        print('DataFrame is empty!')
-    else:
-        return datos
-    
+    selectinfluxplc(desde,hasta)
 
-eel.start('main.html', size=(800, 440), port=8080)
+@eel.expose
+def devolverdatospy():
+
+    dataframe = devolverdatos()
+    timestamp = dataframe["Timestamp"].tolist()
+    numeros = dataframe["Entero"].tolist()
+    return timestamp, numeros
+
+eel.start(port=8080)
+
 
 #options eel.start('index.html', mode='chrome',host = 'localhost', port = 27000, block = True, size = (ancho, alto), position = (0, 0), disable_cache = True, close_callback = close_callback, cmdline_args = ['--browser-startup-dialog','--incognito', '--no-experiments'])
 

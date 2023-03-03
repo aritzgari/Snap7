@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/static/img/favicon.ico">
     <title>Sarsim</title>
     <script type="text/javascript" src="/eel.js"></script>
     <link href="/static/css/bootstrap.css" rel="stylesheet">
-    <script type="text/javascript" src="/static/js/funciones.js"></script>
+    <script type="text/javascript" src="/static/js/tiemporeal.js"></script>
     <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 </head>
 
@@ -20,7 +21,8 @@
         </div>
         <div class="offcanvas-body">
             <a href="" class="bar-item text-body">Inicio</a>
-            <a href="charts.html" class="bar-item text-body">Charts</a>
+            <a href="echarts.html" class="bar-item text-body">Charts</a>
+            <a href="plotly.html" class="bar-item text-body">Plotly</a>
         </div>
     </div>
     <!-- Boton que abre la Sidebar -->
@@ -69,7 +71,7 @@
         <input type="button" class="btn btn-dark" value="Submit" onclick="input()"></br>
     </div>
     <!-- Warning de la parte inferior -->
-    <div class="alert alert-warning">
+    <div class="alert alert-warning fixed-bottom">
         <strong>Warning!</strong> Las entradas realizan cambios de estado reales en el PLC.
     </div>
     
