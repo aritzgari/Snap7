@@ -36,12 +36,13 @@ def datospy():
 
     return lista
 
-#Para el desde hasta
+#Para el desde hasta (pedir datos entre dos fechas)
 @eel.expose
 def desde_hastapy(desde, hasta):
 
     selectinfluxplc(desde,hasta)
 
+#Devuelve los datos pedidos mediante otra función.
 @eel.expose
 def devolverdatospy():
 

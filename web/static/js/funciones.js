@@ -1,10 +1,10 @@
+// Está función hace que le llegue los valores de desde y hasta a Python. Estos valores quedan "precargados".
 function form_desde_hasta() {
-    // La idea es crear un csv o almacenar los datos que se quieren enviar
-    // de vuelta como una variable global dentro del programa python y usarla más adelante en el siguiente
     var desde = document.getElementById("desde").value;
     var hasta = document.getElementById("hasta").value;
     eel.desde_hastapy(desde, hasta)();
 }
+//Pinta el gráfico de Plotly con el archivo JavaScript de la carpeta.
 function chart() {
     myChart = echarts.init(document.getElementById('main'));
 
@@ -37,6 +37,7 @@ function chart() {
     });
 
 };
+//Función al cargar que salga lo siguiente.
 window.onload = function createPlot() {
     eel.devolverdatospy()().then(function ([value1, value2, value3]) {
         var Contador1 = {
